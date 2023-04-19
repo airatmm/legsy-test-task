@@ -24,6 +24,7 @@ export const fetchCardsDetails = (data: {nm_ids: Array<string>}) => request<Arra
             'Content-Type': 'application/json',
             Accept: 'application/json',
         },
+        referrerPolicy: "unsafe-url",
         body: JSON.stringify( data)
     }
 );
@@ -37,6 +38,7 @@ export const fetchCardsPhoto = (data: {nm_ids: Array<string>}) => request<TCardD
             'Content-Type': 'application/json',
             Accept: 'application/json',
         },
+        referrerPolicy: "unsafe-url",
         body: JSON.stringify( data)
     }
 );

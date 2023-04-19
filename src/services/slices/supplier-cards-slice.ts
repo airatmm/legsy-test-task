@@ -10,7 +10,6 @@ export const initialState: TSupplierCardsState = {
     isSuccess: false,
 };
 
-
 export const supplierCardsSlice = createSlice({
     name: 'supplierCards',
     initialState,
@@ -31,21 +30,6 @@ export const supplierCardsSlice = createSlice({
             state.isSuccess = false;
         }
     }
-
-    // extraReducers: (builder) => {
-    //     builder
-    //         .addCase(getSupplierCards.pending, (state) => {
-    //             state.isLoading = true;
-    //         })
-    //         .addCase(getSupplierCards.fulfilled, (state, action) => {
-    //             state.isLoading = false;
-    //             state.data = action.payload;
-    //         })
-    //         .addCase(getSupplierCards.rejected, (state, action) => {
-    //             state.isLoading = false;
-    //             state.error = action.error.message || 'Something went wrong';
-    //         })
-    // }
 });
 export default supplierCardsSlice.reducer;
 
