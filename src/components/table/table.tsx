@@ -60,7 +60,7 @@ const Table = ({ dataWithImage: data }: { dataWithImage: Array<TCardDetailWithIm
             cellRenderer: imageRenderer,
             checkboxSelection: true,
             headerCheckboxSelection: true,
-            width: 100,
+            width: 130,
             pinned: true,
             filter: false,
         },

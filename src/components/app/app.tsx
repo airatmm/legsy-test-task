@@ -6,7 +6,7 @@ import { cardsDetailState, getCardDetails } from "../../services/slices/cards-de
 import { cardsPhotoState, getCardsPhoto } from "../../services/slices/cards-photo-slice";
 import Table from "../table/table";
 import { addGraphData } from "../../utils/graph-generate";
-import { TCardDetailWithGraph, TCardDetailWithImage } from "../../types/types";
+import { TCardDetailWithImage } from "../../types/types";
 
 function App(): JSX.Element {
     const dispatch = useAppDispatch();
@@ -24,16 +24,11 @@ function App(): JSX.Element {
             });
         }
     }, [dataWithGraph, dict]) as Array<TCardDetailWithImage>;
-    console.log(dataWithImage)
-    //console.log(dataWithImage && typeof dataWithImage[0].graph[0].date)
 
     useEffect(() => {
         dispatch(getSupplierCards())
     }, [dispatch])
 
-    // console.log(nomenclatures)
-    //console.log(cardsDetails)
-    // console.log(dict)
     useEffect(() => {
         if (nomenclatures.length > 0) {
             dispatch(getCardsPhoto(nomenclatures))
