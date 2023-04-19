@@ -7,6 +7,9 @@ type TRequestHeaders = {
 export type TRequestOption = {
     method: 'GET' | 'POST' | 'PUT' | 'PATCH' | 'DELETE';
     headers: TRequestHeaders;
+    // Политика реферера для установки referrerPolicy запроса
+    //
+    referrerPolicy?: ReferrerPolicy;
     body?: string;
 };
 

@@ -10,7 +10,8 @@ export const fetchSupplierCards = () => request<Array<string>>(
         headers: {
             'Content-Type': 'application/json',
             Accept: 'application/json',
-        }
+        },
+        referrerPolicy: "unsafe-url"
     }
 );
 
