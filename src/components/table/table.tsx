@@ -5,9 +5,9 @@ import 'ag-grid-enterprise';
 import 'ag-grid-community/styles/ag-grid.css';
 import 'ag-grid-community/styles/ag-theme-alpine.css';
 import { ColDef, ColumnSparklineOptions, SelectionChangedEvent, ValueGetterParams } from "ag-grid-community";
-import { TCardDetailWithGraph, TCardDetailWithImage, TGraphItem } from "../../types/types";
+import { TCardDetailWithImage, TGraphItem } from "../../types/types";
 
-const Table = ({ dataWithImage: data }): JSX.Element => {
+const Table = ({ dataWithImage: data }: { dataWithImage: Array<TCardDetailWithImage> }): JSX.Element => {
     const containerStyle = useMemo(() => ({ maxWidth: '1600px', width: '100%', height: '100%' }), []);
 
     const imageRenderer = ({ value }: { value: string }): JSX.Element => {

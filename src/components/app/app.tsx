@@ -16,14 +16,14 @@ function App(): JSX.Element {
 
     const dataWithGraph = addGraphData(cardsDetails)
 
-    const dataWithImage: TCardDetailWithImage[] = useMemo(() => {
+    const dataWithImage = useMemo(() => {
         if (dataWithGraph.length > 0 && Object.keys(dict).length > 0) {
             return dataWithGraph.map((obj) => {
                 const image = dict[obj.id];
                 return image ? { ...obj, image } : obj;
             });
         }
-    }, [dataWithGraph, dict]);
+    }, [dataWithGraph, dict]) as Array<TCardDetailWithImage>;
     console.log(dataWithImage)
     //console.log(dataWithImage && typeof dataWithImage[0].graph[0].date)
 
