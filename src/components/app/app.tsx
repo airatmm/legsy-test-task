@@ -36,13 +36,11 @@ function App(): JSX.Element {
         }
     }, [dispatch, nomenclatures]);
 
-
     return (
         <div className={ styles.app }>
-            <Table dataWithImage={dataWithImage}/>
+            <Table dataWithImage={ dataWithImage } />
         </div>
     );
-
 }
 
 export default App;

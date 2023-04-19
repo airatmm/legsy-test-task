@@ -22,16 +22,14 @@ const Table = ({ dataWithImage: data }: { dataWithImage: Array<TCardDetailWithIm
             const dateB = new Date(b.date).getTime();
             return dateA - dateB;
         });
-        console.log(graph)
         return graph.map((item: TGraphItem) => [new Date(item.date).getTime(), item.amount]);
-
     }
 
     // выбор строк через чекбокс
     const onSelectionChanged = (event: SelectionChangedEvent) => {
         const selectedRows = event.api.getSelectedRows();
         // по логике здесь нужно дальше что то делать с ними и взаимодействовать
-        console.log(selectedRows);
+        // console.log(selectedRows);
         // return selectedRows.map(row => row.id); // к примеру
     };
 

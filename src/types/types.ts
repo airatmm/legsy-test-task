@@ -21,7 +21,6 @@ export type TSupplierCardsState = {
     list: Array<string>,
     isLoading: boolean,
     error: TErrorResponse | null,
-    isSuccess: boolean,
 }
 type TCardDetailColors = {
     name: string,
@@ -70,5 +69,4 @@ export type CardsPhotoState = {
     dict: TCardDict,
     isLoading: boolean,
     error: TErrorResponse | null,
-    isSuccess: boolean
 };

@@ -7,7 +7,6 @@ export const initialState: TSupplierCardsState = {
     list: [],
     isLoading: false,
     error: null,
-    isSuccess: false,
 };
 
 export const supplierCardsSlice = createSlice({
@@ -17,17 +16,14 @@ export const supplierCardsSlice = createSlice({
         supplierCardsRequest: (state) => {
             state.isLoading = true;
             state.error = null;
-            state.isSuccess = false;
         },
         supplierCardsSuccess: (state, action: PayloadAction<Array<string>>) => {
             state.isLoading = false;
             state.list = action.payload;
-            state.isSuccess = true;
         },
         supplierCardsError: (state, action: PayloadAction<TErrorResponse>) => {
             state.isLoading = false;
             state.error = action?.payload;
-            state.isSuccess = false;
         }
     }
 });
@@ -46,7 +42,7 @@ export const getSupplierCards = (): AppThunk => async (dispatch) => {
     try {
         await fetchSupplierCards()
             .then((data) => dispatch(supplierCardsSuccess(data)))
-    } catch(error: any) {
+    } catch (error: any) {
         dispatch(supplierCardsError(error));
     }
 };

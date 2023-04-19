@@ -7,9 +7,9 @@ import reducer, {
 import { testError } from "./cards-details-slice.spec";
 
 const testCardsPhoto = {
-  "116565962": "https://basket-08.wb.ru/vol1165/part116565/116565962/images/c246x328/1.jpg",
-  "140374926": "https://basket-10.wb.ru/vol1403/part140374/140374926/images/c246x328/1.jpg",
-  "148320325": "https://basket-10.wb.ru/vol1483/part148320/148320325/images/c246x328/1.jpg"
+    "116565962": "https://basket-08.wb.ru/vol1165/part116565/116565962/images/c246x328/1.jpg",
+    "140374926": "https://basket-10.wb.ru/vol1403/part140374/140374926/images/c246x328/1.jpg",
+    "148320325": "https://basket-10.wb.ru/vol1483/part148320/148320325/images/c246x328/1.jpg"
 }
 
 describe('cards photo reducer', () => {
@@ -22,7 +22,6 @@ describe('cards photo reducer', () => {
             dict: {},
             isLoading: true,
             error: null,
-            isSuccess: false,
         })
     });
     test('should return cards photo SUCCESS', () => {
@@ -31,7 +30,6 @@ describe('cards photo reducer', () => {
             dict: testCardsPhoto,
             isLoading: false,
             error: null,
-            isSuccess: true,
         })
     });
     test('should return cards photo ERROR', () => {
@@ -48,7 +46,6 @@ describe('cards photo reducer', () => {
                     }
                 ]
             },
-            isSuccess: false,
         })
     });
 })

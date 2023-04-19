@@ -14,7 +14,7 @@ export const fetchSupplierCards = () => request<Array<string>>(
     }
 );
 
-export const fetchCardsDetails = (data: {nm_ids: Array<string>}) => request<Array<TCardDetail>>(
+export const fetchCardsDetails = (data: { nm_ids: Array<string> }) => request<Array<TCardDetail>>(
     `${ BASE_URL }/cards_detail`,
 
     {
@@ -23,11 +23,11 @@ export const fetchCardsDetails = (data: {nm_ids: Array<string>}) => request<Arra
             'Content-Type': 'application/json',
             Accept: 'application/json',
         },
-        body: JSON.stringify( data)
+        body: JSON.stringify(data)
     }
 );
 
-export const fetchCardsPhoto = (data: {nm_ids: Array<string>}) => request<TCardDict>(
+export const fetchCardsPhoto = (data: { nm_ids: Array<string> }) => request<TCardDict>(
     `${ BASE_URL }/cards_photo`,
 
     {
@@ -36,6 +36,6 @@ export const fetchCardsPhoto = (data: {nm_ids: Array<string>}) => request<TCardD
             'Content-Type': 'application/json',
             Accept: 'application/json',
         },
-        body: JSON.stringify( data)
+        body: JSON.stringify(data)
     }
 );

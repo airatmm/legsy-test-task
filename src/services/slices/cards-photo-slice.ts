@@ -7,7 +7,6 @@ export const initialState: CardsPhotoState = {
     dict: {},
     isLoading: false,
     error: null,
-    isSuccess: false,
 };
 
 export const cardsPhotoSlice = createSlice({
@@ -17,19 +16,16 @@ export const cardsPhotoSlice = createSlice({
         cardsPhotoRequest: (state) => {
             state.isLoading = true;
             state.error = null;
-            state.isSuccess = false;
         },
         cardsPhotoSuccess: (state, action: PayloadAction<TCardDict>) => {
             state.dict = action.payload;
             state.isLoading = false;
             state.error = null;
-            state.isSuccess = true;
         },
 
         cardsPhotoError: (state, action: PayloadAction<TErrorResponse>) => {
             state.isLoading = false;
             state.error = action?.payload;
-            state.isSuccess = false;
         },
     }
 });
@@ -43,7 +39,7 @@ export const {
 
 export const cardsPhotoState = (store: RootState) => store.cardsPhoto;
 
-export const getCardsPhoto = (nm_ids: Array<string>): AppThunk => async (dispatch)=>  {
+export const getCardsPhoto = (nm_ids: Array<string>): AppThunk => async (dispatch) => {
     dispatch(cardsPhotoRequest());
     try {
         await fetchCardsPhoto({ nm_ids })

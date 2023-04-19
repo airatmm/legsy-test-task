@@ -34,7 +34,6 @@ describe('supplier cards reducer', () => {
             list: [],
             isLoading: true,
             error: null,
-            isSuccess: false,
         })
     });
     test('should return supplier cards SUCCESS', () => {
@@ -43,7 +42,6 @@ describe('supplier cards reducer', () => {
             list: testArray,
             isLoading: false,
             error: null,
-            isSuccess: true,
         })
     });
     test('should return supplier cards ERROR', () => {
@@ -60,7 +58,6 @@ describe('supplier cards reducer', () => {
                     }
                 ]
             },
-            isSuccess: false,
         })
     });
 })
